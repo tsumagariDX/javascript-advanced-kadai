@@ -47,10 +47,6 @@ const textLists = [
  // キー入力の判定
   const keyPress = e => {
   
-  // 文字数のカウント
-    typeCount++;
-    counttype.textContent = typeCount; // HTMLに反映
-
   // 誤タイプの場合
    if(e.key !== untyped.substring(0, 1)) {
     wrap.classList.add('mistyped');
@@ -69,6 +65,9 @@ const textLists = [
     untyped = untyped.substring(1);
     typedfield.textContent = typed;
     untypedfield.textContent = untyped;
+     // 文字数のカウント
+     typeCount++;
+     counttype.textContent = typeCount; // HTMLに反映
 
    // テキストがなくなったら新しいテキストを表示
    if(untyped === '') {
